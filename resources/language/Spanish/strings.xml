@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<strings>
+    <string id="00001">bx360 v0.1a</string> 
+	<string id="00002">Path to your drive</string>
+	<string id="00003">Choose a game image to burn</string>
+    <string id="00004">Burn speed (just input a number like 2)</string>
+	<string id="00005">Burn a 360 backup</string>
+	<string id="00006">Exit</string>
+	<string id="00007">Aborting...</string>
+	<string id="10008">Burning...</string>
+    <string id="10009">Process started. You will be notified when it has finished.</string>
+	<string id="10010">"Something Happened"</string>
+	<string id="10011">Click ok to return to the main menu</string>
+	<string id="10012">Are you sure you want to start the burn?</string>
+	<string id="10013">Command:</string>
+	<string id="10014">Make sure there is a blank disc in the drive.</string>
+	<string id="10015">Device is not ready...</string>
+	<string id="10016">The drive is not ready. I have no clue why.</string>
+	<string id="10017">Drive empty</string>
+	<string id="10018">Please put a disc in the drive, because you\nhave to have a disc in the drive\nto burn things</string>
+    <string id="10019">Get a better OS</string>
+    <string id="10020">It's free - www.ubuntu.com</string>
+    <string id="10021">You are already burning something...</string>
+</strings>
+
