@@ -108,7 +108,7 @@ def burnit():
 #-dvd-compat -speed=2 -Z /dev/hda=IMAGE.000
 
     if (is_linux):
-        command = 'growisofs -dry-run -use-the-force-luke=dao -use-the-force-luke=break:1913760  -dvd-compat -speed=' + speed + ' -Z ' + drive + '=' + game_iso
+        command = 'growisofs -use-the-force-luke=dao -use-the-force-luke=break:1913760  -dvd-compat -speed=' + speed + ' -Z ' + drive + '=' + game_iso
 
     if (is_windows):
         command = 'some windows cmd'
