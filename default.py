@@ -28,7 +28,7 @@ xbmc.Language.__init__(os.getcwd(), xbmc.getLanguage())
 #!                CONFIGURE THESE                    !#
 
 
-ws_port = '6370'              #xbmc web server port. !#
+ws_port = '9999'              #xbmc web server port. !#
 ws_host = 'localhost'         #xbmc web server host  !#
 
 
@@ -36,7 +36,7 @@ ws_host = 'localhost'         #xbmc web server host  !#
 #!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#
 #!#!#!#!#!        Comine the two      #!#!#!#!#!#!#!#!#
 
-webserver = ws_host + ':' + ws_port
+webserver = '\"' + ws_host + ':' + ws_port + '\"'
 
 #!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#
 #!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#
@@ -98,7 +98,7 @@ def burnit():
     kb.setHiddenInput(False)
     kb.doModal()
     if (kb.isConfirmed()):
-        drive = kb.getText().replace(' ', '\ ')
+        drive = '\"' + kb.getText() + '\"'
     else:
         return(1)
 
@@ -107,7 +107,8 @@ def burnit():
     dialog = xbmcgui.Dialog()   
     the_iso = dialog.browse(1,words(00003), 'files', '.iso|.bin|.img|.000', True, False,)
     if (the_iso != ''):  
-        game_iso = the_iso.replace(' ', '\ ')
+#        game_iso = the_iso.replace(' ', '\ ')
+        game_iso = '\"' + the_iso + '\"'
     else: 
         return(1)
     print 'Image chosen: ' + game_iso
@@ -120,7 +121,7 @@ def burnit():
     kb.setHiddenInput(False)
     kb.doModal()
     if (kb.isConfirmed()):
-        speed = kb.getText().replace(' ', '\ ')
+        speed = '\"' + kb.getText() + '\"'
     else:
         return(1)
 
@@ -131,7 +132,7 @@ def burnit():
     if (is_linux):
        #command = 'cat /dev/urandom > ~/out.file'
        #command = 'growisofs -dry-run -use-the-force-luke=dao -use-the-force-luke=break:1913760  -dvd-compat -speed=' + speed + ' -Z ' + drive + '=' + game_iso
-        command = 'sh ' + os.getcwd().replace(' ', '\ ') + '/bx360.sh ' + drive + ' ' + game_iso + ' ' + speed + ' ' + os.getcwd().replace(' ', '\ ') + '/resources/icons/xboxlogo.png ' + webserver                        
+        command = 'sh \"' + os.getcwd() + '/bx360.sh\" ' + drive + ' ' + game_iso + ' ' + speed + ' \"' + os.getcwd() + '/resources/icons/xboxlogo.png\" ' + webserver
     if (is_windows):
         command = 'some windows cmd'
 
@@ -189,7 +190,7 @@ class opening_act(xbmcgui.Window):
 def run_it(command):
 
     if (is_linux): 
-        command = command + '&'
+        command = command + ' &'
         sys.platform.startswith('linux')
         status = os.system("%s" % (command))
         print 'Here is what actually ran:' + command    
