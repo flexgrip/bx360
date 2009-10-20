@@ -28,7 +28,7 @@ xbmc.Language.__init__(os.getcwd(), xbmc.getLanguage())
 #!                CONFIGURE THESE                    !#
 
 
-ws_port = '6370'              #xbmc web server port. !#
+ws_port = '9999'              #xbmc web server port. !#
 ws_host = 'localhost'         #xbmc web server host  !#
 
 
@@ -129,9 +129,9 @@ def burnit():
 #-dvd-compat -speed=2 -Z /dev/hda=IMAGE.000
 
     if (is_linux):
-       #command = 'cat /dev/urandom > ~/out.file'
+        command = 'cat /dev/urandom > ~/out.file'
        #command = 'growisofs -dry-run -use-the-force-luke=dao -use-the-force-luke=break:1913760  -dvd-compat -speed=' + speed + ' -Z ' + drive + '=' + game_iso
-        command = 'sh ' + os.getcwd().replace(' ', '\ ') + '/bx360.sh ' + drive + ' ' + game_iso + ' ' + speed + ' ' + os.getcwd().replace(' ', '\ ') + '/resources/icons/xboxlogo.png ' + webserver                        
+       #command = 'sh ' + os.getcwd().replace(' ', '\ ') + '/bx360.sh ' + drive + ' ' + game_iso + ' ' + speed + ' ' + os.getcwd().replace(' ', '\ ') + '/resources/icons/xboxlogo.png ' + webserver                        
     if (is_windows):
         command = 'some windows cmd'
 
@@ -189,7 +189,7 @@ class opening_act(xbmcgui.Window):
 def run_it(command):
 
     if (is_linux): 
-        command = command + '&'
+        command = command + ''
         sys.platform.startswith('linux')
         status = os.system("%s" % (command))
         print 'Here is what actually ran:' + command    
